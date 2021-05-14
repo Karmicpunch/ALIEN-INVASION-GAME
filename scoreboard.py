@@ -46,9 +46,3 @@ class Scoreboard:
         """ Shows score on a screen """
         self.screen.blit(self.score_image, self.score_rect)
         self.screen.blit(self.high_score_image, self.high_score_rect)
-
-    def check_high_score(self):
-        """ Checking new record """
-        if self.stats.score > self.stats.high_score:
-            self.stats.high_score = self.stats.score
-            self.prep_high_score()
