@@ -22,7 +22,7 @@ class AlienInvasion:
         # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         # self.settings.screen_width = self.screen.get_rect().width
         # self.settings.screen_height = self.screen.get_rect().height
-        pygame.display.set_caption("Alien Invasion")
+        # pygame.display.set_caption("Alien Invasion")
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))  # graphical elements of the game ("surface")
         pygame.display.set_caption("Alien Invasion")  # 1200-800 window parameters
@@ -137,7 +137,7 @@ class AlienInvasion:
             self.settings.increase_speed()
             # level increase
             self.stats.level += 1
-            self.sb.prep_leve()
+            self.sb.prep_level()
 
     def _update_aliens(self):
         """ Renewing positions of aliens """

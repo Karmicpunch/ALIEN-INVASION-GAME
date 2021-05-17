@@ -47,13 +47,6 @@ class Scoreboard:
         self.high_score_rect.centerx = self.screen_rect.centerx
         self.high_score_rect.top = self.score_rect.top
 
-    def show_score(self):
-        """ Shows score on a screen, level, and how much ships left"""
-        self.screen.blit(self.score_image, self.score_rect)
-        self.screen.blit(self.high_score_image, self.high_score_rect)
-        self.screen.blit(self.level_image, self.level_rect)
-        self.ships.draw(self.screen)
-
     def prep_level(self):
         level_str = str(self.stats.level)
         self.level_image = self.font.render(level_str, True,
@@ -72,3 +65,16 @@ class Scoreboard:
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10
             self.ships.add(ship)
+
+    def check_high_score(self):
+        """ Checking if there is a new high score"""
+        if self.stats.score > self.stats.high_score:
+            self.stats.high_score = self.stats.score
+            self.prep_high_score()
+
+    def show_score(self):
+        """ Shows score on a screen, level, and how much ships left"""
+        self.screen.blit(self.score_image, self.score_rect)
+        self.screen.blit(self.high_score_image, self.high_score_rect)
+        self.screen.blit(self.level_image, self.level_rect)
+        self.ships.draw(self.screen)
