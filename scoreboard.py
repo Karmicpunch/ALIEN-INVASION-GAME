@@ -48,7 +48,7 @@ class Scoreboard:
         self.high_score_rect.top = self.score_rect.top
 
     def show_score(self):
-        """ Shows score on a screen, record, and left ships"""
+        """ Shows score on a screen, level, and how much ships left"""
         self.screen.blit(self.score_image, self.score_rect)
         self.screen.blit(self.high_score_image, self.high_score_rect)
         self.screen.blit(self.level_image, self.level_rect)
